@@ -95,9 +95,21 @@ where stream > 1000000000 ;
 
 
       
-4. 
-5. Find all tracks that belong to the album type `single`.
-6. Count the total number of tracks by each artist.
+4. **Find all tracks that belong to the album type `single`.**
+ ```sql
+select * from spotify 
+where album_type = 'single' ;
+``` 
+   
+5. **Count the total number of tracks by each artist.**
+ ```sql
+select 
+   artist ,
+   count (*) as total_no_songs 
+from  spotify 
+group by artist
+order by 2 
+  ```  
 
 ### Medium Level
 6. Calculate the average danceability of tracks in each album.
